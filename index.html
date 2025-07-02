@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Slideshow Fullscreen Geser Kiri</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background: black;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slideshow Fullscreen Geser Kiri</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: black;
+      }
 
-    .slideshow-container {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
+      .slideshow-container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
 
-    .slides-wrapper {
-      display: flex;
-      width: 400vw; /* 4 slide x 100% lebar */
-      height: 100vh;
-      transition: transform 1s ease-in-out;
-    }
+      .slides-wrapper {
+        display: flex;
+        width: 400vw; /* 4 slide x 100% lebar */
+        height: 100vh;
+        transition: transform 1s ease-in-out;
+      }
 
-    .slide {
-      width: 100vw;
-      height: 100vh;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: black;
-    }
+      .slide {
+        width: 100vw;
+        height: 100vh;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+      }
 
-    .slide img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      display: block;
-    }
+      .slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+      }
 
-    .overlay-title {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-size: 28px;
-      font-family: Arial, sans-serif;
-      z-index: 10;
-      text-shadow: 1px 1px 5px black;
-    }
-  </style>
-</head>
-<body>
-  
-
-  <div class="slideshow-container">
-    <div class="slides-wrapper" id="slides">
-      <div class="slide"><img src="slide1.jpg" alt="Slide 1" /></div>
-      <div class="slide"><img src="slide2.jpg" alt="Slide 2" /></div>
-      <div class="slide"><img src="slide3.jpg" alt="Slide 3" /></div>
-      <div class="slide"><img src="slide4.jpg" alt="Slide 4" /></div>
+      .overlay-title {
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 28px;
+        font-family: Arial, sans-serif;
+        z-index: 10;
+        text-shadow: 1px 1px 5px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <div class="slides-wrapper" id="slides">
+        <div class="slide"><img src="slide1.jpg" alt="Slide 1" /></div>
+        <div class="slide"><img src="slide2.jpg" alt="Slide 2" /></div>
+        <div class="slide"><img src="slide3.jpg" alt="Slide 3" /></div>
+        <div class="slide"><img src="slide4.jpg" alt="Slide 4" /></div>
+      </div>
     </div>
-  </div>
 
-  <script>
-    const slidesWrapper = document.getElementById("slides");
-    const totalSlides = 4;
-    let index = 0;
+    <script>
+      const slidesWrapper = document.getElementById("slides");
+      const totalSlides = 4;
+      let index = 0;
 
-    function nextSlide() {
-      index = (index + 1) % totalSlides;
-      slidesWrapper.style.transform = `translateX(-${index * 100}vw)`;
-    }
+      function nextSlide() {
+        index = (index + 1) % totalSlides;
+        slidesWrapper.style.transform = `translateX(-${index * 100}vw)`;
+      }
 
-    setInterval(nextSlide, 12000); // Ganti tiap 3 menit (180.000 ms)
-  </script>
-</body>
+      // Ganti slide setiap 3 menit (180.000 milidetik)
+      setInterval(nextSlide, 90000);
+    </script>
+  </body>
 </html>
